@@ -10,11 +10,11 @@ public class RegexUserRegistration {
 
             Scanner scanner = new Scanner(System.in);
             String password = scanner.nextLine();
-            String regex = "^[a-z0-9!@#$%^&*(?=.*[A-Z])].{8,15}";
-            Pattern p = Pattern.compile(regex);
-            Matcher m = p.matcher(password);
-            boolean b = m.matches();
-            System.out.println(b);
+            String regex = "((?=.*[a-z0-9!@#$%^&*])(?=.*[A-Z])).{8,15}";
+            Pattern pattern = Pattern.compile(regex);
+            Matcher matcher = pattern.matcher(password);
+            boolean bool = matcher.matches();
+            System.out.println(bool);
         }
     public static void main(String[] args) {
             RegexUserRegistration userRegistration = new RegexUserRegistration();
