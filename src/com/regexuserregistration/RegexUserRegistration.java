@@ -6,21 +6,13 @@ import java.util.regex.Pattern;
 
 public class RegexUserRegistration {
     public static void main(String[] args) {
-        // taking user input
+
         Scanner scanner = new Scanner(System.in);
-        String emails = scanner.nextLine();
-        String regex = "^[a-zA-z0-9+.+a-z]+@+[bl+.+co+.+in]{2,30}";
+        String mobileNumber = scanner.nextLine();
+        String regex = "[+](?:[0-9]\\s?){11}[0-9]";
         Pattern p = Pattern.compile(regex);
-        // for taking user input pass regex instead of Kundan
-        Matcher m = p.matcher(emails);
+        Matcher m = p.matcher(mobileNumber);
         boolean b = m.matches();
         System.out.println(b);
-        // for user input
-//        if (firstName.matches(regex)){
-//            System.out.println("Valid name: ");
-//        }
-//        else {
-//            System.out.println("Invalid name: ");
-//        }
     }
 }
