@@ -8,10 +8,10 @@ public class RegexUserRegistration {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        String mobileNumber = scanner.nextLine();
-        String regex = "[+](?:[0-9]\\s?){11}[0-9]";
+        String password = scanner.nextLine();
+        String regex = "[a-zA-Z0-9!@#$%^&*]{8,15}";
         Pattern p = Pattern.compile(regex);
-        Matcher m = p.matcher(mobileNumber);
+        Matcher m = p.matcher(password);
         boolean b = m.matches();
         System.out.println(b);
     }
