@@ -11,7 +11,7 @@ public class RegexUserRegistration {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Enter password: ");
             String password = scanner.nextLine();
-            String regex = "((?=.*[a-z!@#$%^&*])(?=.*[A-Z])(?=.*[0-9])).{8,15}";
+            String regex = "((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=[^!@#$%^&*]*[!@#$%^&*][^!@#$%^&*])).{8,15}";
             Pattern pattern = Pattern.compile(regex);
             Matcher matcher = pattern.matcher(password);
             boolean bool = matcher.matches();
